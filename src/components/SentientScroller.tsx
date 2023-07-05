@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { StyledButton } from "./styles";
 
 type SentientScrollerProps = {
   children: any;
@@ -64,9 +65,9 @@ export default function SentientScroller({ children }: SentientScrollerProps) {
   return (
     <>
       {children}
-      <button onClick={scrollToStoredPosition}>
+      <StyledButton onClick={scrollToStoredPosition}>
         Scroll to Stored Position
-      </button>
+      </StyledButton>
     </>
   );
 }
