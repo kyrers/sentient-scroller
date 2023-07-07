@@ -2,10 +2,13 @@ import React, { PropsWithChildren, useEffect, useState } from "react";
 import { StyledButton } from "./styles";
 
 type SentientScrollerProps = PropsWithChildren & {
-  //any props if needed
+  interval: number;
 };
 
-export default function SentientScroller({ children }: SentientScrollerProps) {
+export default function SentientScroller({
+  children,
+  interval,
+}: SentientScrollerProps) {
   const [storedPosition, setStoredPosition] = useState<number | undefined>(
     undefined
   );
@@ -17,7 +20,7 @@ export default function SentientScroller({ children }: SentientScrollerProps) {
     timeout = window.setTimeout(() => {
       const currentPosition = window.scrollY;
       setStoredPosition(currentPosition);
-    }, 2000);
+    }, interval);
   };
 
   const scrollToStoredPosition = () => {
