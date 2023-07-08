@@ -9,9 +9,7 @@ export default function SentientScroller({
   children,
   threshold,
 }: SentientScrollerProps) {
-  const [storedPosition, setStoredPosition] = useState<number | undefined>(
-    undefined
-  );
+  const [storedPositions, setStoredPositions] = useState<number[]>([]);
 
   let timeout: number;
 
@@ -19,13 +17,18 @@ export default function SentientScroller({
     window.clearTimeout(timeout);
     timeout = window.setTimeout(() => {
       const currentPosition = window.scrollY;
-      setStoredPosition(currentPosition);
+      setStoredPositions((storedPositions) => [
+        ...storedPositions,
+        currentPosition,
+      ]);
     }, threshold);
   };
 
   const scrollToStoredPosition = () => {
+    const currentPosition = window.scrollY;
+
     window.scrollTo({
-      top: storedPosition,
+      top: storedPositions.findLast((p) => p !== currentPosition),
       behavior: "smooth",
     });
   };
@@ -40,9 +43,9 @@ export default function SentientScroller({
   return (
     <>
       {children}
-      {storedPosition && (
+      {storedPositions.length > 0 && (
         <StyledButton onClick={scrollToStoredPosition}>
-          Scroll to Stored Position
+          Scroll to where you were
         </StyledButton>
       )}
     </>
