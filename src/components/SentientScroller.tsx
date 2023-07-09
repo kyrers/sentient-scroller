@@ -1,5 +1,6 @@
 import React, { PropsWithChildren, useEffect, useState } from "react";
 import { StyledButton } from "./styles";
+import { ScrollIcon } from "./Icons/ScrollIcon";
 
 type SentientScrollerProps = PropsWithChildren & {
   threshold: number;
@@ -44,8 +45,11 @@ export default function SentientScroller({
     <>
       {children}
       {storedPositions.length > 0 && (
-        <StyledButton onClick={scrollToStoredPosition}>
-          Scroll to where you were
+        <StyledButton
+          onClick={scrollToStoredPosition}
+          title="Move to where you were"
+        >
+          <ScrollIcon fill="white" />
         </StyledButton>
       )}
     </>
