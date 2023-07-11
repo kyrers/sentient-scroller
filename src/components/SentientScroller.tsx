@@ -5,12 +5,14 @@ import { ScrollIcon } from "./Icons/ScrollIcon";
 type SentientScrollerProps = PropsWithChildren & {
   timeThreshold: number;
   positionThreshold?: number;
+  behavior?: "sequential" | "static";
 };
 
 export default function SentientScroller({
   children,
   timeThreshold,
   positionThreshold = 0,
+  behavior = "sequential",
 }: SentientScrollerProps) {
   const [storedPositions, setStoredPositions] = useState<number[]>([]);
 
@@ -43,8 +45,13 @@ export default function SentientScroller({
   const scrollToStoredPosition = () => {
     const currentPosition = window.scrollY;
 
+    const to =
+      behavior === "sequential"
+        ? storedPositions.findLast((p) => p !== currentPosition)
+        : storedPositions.find((p) => p !== currentPosition);
+
     window.scrollTo({
-      top: storedPositions.findLast((p) => p !== currentPosition),
+      top: to,
       behavior: "smooth",
     });
   };
