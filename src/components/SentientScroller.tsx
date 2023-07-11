@@ -1,12 +1,7 @@
-import React, { PropsWithChildren, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { StyledButton } from "./styles";
 import { ScrollIcon } from "./Icons/ScrollIcon";
-
-type SentientScrollerProps = PropsWithChildren & {
-  timeThreshold: number;
-  positionThreshold?: number;
-  behavior?: "sequential" | "static";
-};
+import { SentientScrollerProps } from "../types";
 
 export default function SentientScroller({
   children,
