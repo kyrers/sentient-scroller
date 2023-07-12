@@ -1,7 +1,8 @@
 {
+  "author": "kyre <kyrers.eth@gmail.com>",
   "name": "sentient-scroller",
   "version": "1.0.0",
-  "description": "",
+  "description": "A React library that provides a scroll management component for remembering and navigating back to previous scroll positions.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -10,9 +11,20 @@
     "type": "git",
     "url": "git+https://github.com/kyrers/sentient-scroller.git"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "keywords": [
+    "React",
+    "navigation",
+    "scroll",
+    "scrollbar",
+    "scroll helper",
+    "scroll management",
+    "scroll memory",
+    "scroll navigation",
+    "scroll position",
+    "scroll state",
+    "scroll tracking"
+  ],
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/kyrers/sentient-scroller/issues"
   },
