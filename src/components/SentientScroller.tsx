@@ -63,7 +63,6 @@ export default function SentientScroller({
       {children}
       {storedPositions.length > 0 && (
         <StyledButton
-          data-testid="scroll-button"
           onClick={scrollToStoredPosition}
           title="Move to where you were"
         >
