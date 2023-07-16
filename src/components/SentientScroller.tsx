@@ -40,9 +40,15 @@ export default function SentientScroller({
   const scrollToStoredPosition = () => {
     const currentPosition = window.scrollY;
 
+    /**
+     * Note that reverse().find() is used instead of findLast() because the latter was introduced in ES2023.
+     * At the time of writing, it is still very recent and available only in the most recent versions of Nodejs.
+     * For instance, jest uses jsdom which does not yet support it.
+     * Since this array contains at most 2 values, performance does not suffer, so for the sake of compatibility, findLast() was not used.
+     */
     const to =
       behavior === "sequential"
-        ? storedPositions.findLast((p) => p !== currentPosition)
+        ? storedPositions.reverse().find((p) => p !== currentPosition)
         : storedPositions.find((p) => p !== currentPosition);
 
     window.scrollTo({
