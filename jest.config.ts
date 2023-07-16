@@ -7,7 +7,7 @@ const config: Config = {
   coverageProvider: "v8",
   testEnvironment: "jsdom",
   transform: {
-    "^.+\\.(t|j)sx?$": "ts-jest",
+    "^.+\\.tsx?$": ["ts-jest", { tsconfig: "./tsconfig.json" }],
   },
   testRegex: "(/tests/.*|(\\.|/)(test|spec))\\.(jsx?|tsx?)$",
   moduleFileExtensions: ["ts", "tsx", "js", "jsx", "json", "node"],
