@@ -1,39 +1,18 @@
 {
-  "author": "kyre <kyrers.eth@gmail.com>",
-  "name": "sentient-scroller",
-  "version": "1.0.0",
-  "description": "A React library that provides a scroll management component for remembering and navigating back to previous scroll positions.",
-  "main": "index.js",
-  "scripts": {
-    "test": "jest"
+  "author": {
+    "name": "kyre",
+    "email": "kyrers.eth@gmail.com",
+    "url": "https://twitter.com/kyre_rs"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/kyrers/sentient-scroller.git"
-  },
-  "keywords": [
-    "React",
-    "navigation",
-    "scroll",
-    "scrollbar",
-    "scroll helper",
-    "scroll management",
-    "scroll memory",
-    "scroll navigation",
-    "scroll position",
-    "scroll state",
-    "scroll tracking"
-  ],
-  "license": "MIT",
   "bugs": {
     "url": "https://github.com/kyrers/sentient-scroller/issues"
   },
-  "homepage": "https://github.com/kyrers/sentient-scroller#readme",
   "dependencies": {
     "@emotion/styled": "^11.11.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
+  "description": "A React library that provides a scroll management component for remembering and navigating back to previous scroll positions.",
   "devDependencies": {
     "@testing-library/react": "^14.0.0",
     "@types/jest": "^29.5.3",
@@ -43,5 +22,37 @@
     "ts-jest": "^29.1.1",
     "ts-node": "^10.9.1",
     "typescript": "^5.1.6"
-  }
+  },
+  "files": [
+    "dist",
+    "LICENSE",
+    "README.md"
+  ],
+  "homepage": "https://github.com/kyrers/sentient-scroller#readme",
+  "keywords": [
+    "react",
+    "react navigation",
+    "react scroll",
+    "scroll management",
+    "scroll position",
+    "scroll tracking"
+  ],
+  "license": "MIT",
+  "main": "./dist/cjs/index.js",
+  "module": "./dist/esm/index.js",
+  "name": "sentient-scroller",
+  "prepare": "pnpm build",
+  "prepublishOnly": "pnpm test",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kyrers/sentient-scroller.git"
+  },
+  "scripts": {
+    "build": "pnpm build:esm && pnpm build:cjs",
+    "build:esm": "tsc",
+    "build:cjs": "tsc --module commonjs --outDir dist/cjs",
+    "test": "jest"
+  },
+  "types": "./dist/esm/index.d.ts",
+  "version": "1.0.0"
 }
