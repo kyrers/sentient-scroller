@@ -27,9 +27,8 @@ jobs:
       - name: Build
         run: pnpm build
 
-        #--no-git-checks needed because pnpm always throws "unclean working tree" while "git status -u" shows "clean working tree".
       - name: Publish
-        run: pnpm publish --no-git-checks
+        run: pnpm publish
 
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
