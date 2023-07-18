@@ -5,8 +5,12 @@
 ![npm-typescript]
 ![npm][weekly-downloads]
 [![License][github-license]][github-license-url]
+<a href="https://codesandbox.io/s/sentient-scroller-y5pf8m" target="_blank">![Edit on Codesandbox](https://img.shields.io/badge/demo-Edit%20on%20Codesandbox-2385f7?style=for-the-badge&logo=codesandbox)</a>
 
 A React library that provides a scroll management component for remembering and navigating back to previous scroll positions.
+
+<b> Please note that the `SentientScroller` component currently works for scrolling events in the entire window, as it relies on the `window` object. 
+Support for scrolling within specific elements (e.g. `divs`) will be introduced in future versions.</b>
 
 ### Installation
 

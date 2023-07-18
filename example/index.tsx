@@ -13,20 +13,8 @@ const root = createRoot(container!);
 
 root.render(
   <React.StrictMode>
-    <div style={{ display: "flex" }}>
-      {/* Sequential Behavior example usage */}
-      <div style={{ height: 100, overflow: "auto" }}>
-        <SentientScroller timeThreshold={2000}>
-          <div style={{ height: 1000 }}>Your Scrollable Content</div>
-        </SentientScroller>
-      </div>
-
-      {/* Static Behavior example usage */}
-      <div style={{ height: 100, overflow: "auto" }}>
-        <SentientScroller timeThreshold={2000} behavior="static">
-          <div style={{ height: 1000 }}>Your Scrollable Content</div>
-        </SentientScroller>
-      </div>
-    </div>
+    <SentientScroller timeThreshold={2000}>
+      Your Scrollable Content
+    </SentientScroller>
   </React.StrictMode>
 );
